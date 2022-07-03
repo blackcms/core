@@ -1,0 +1,268 @@
+/*Table*/
+@use "sass:math";
+
+.media-management-list {
+    border-bottom: 1px solid $color-lighter-black;
+
+    ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    .media-management-list-title {
+        display: flex;
+        @include lib-css(flex-direction, row);
+        padding: 15px 10px;
+        cursor: pointer;
+
+        .custom-checkbox {
+            width: 35px;
+            min-width: 35px;
+        }
+
+        .media-management-file-name {
+            @include lib-css(flex-grow, 1);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            padding-right: 15px;
+            padding-top: 3px;
+
+            i {
+                margin-right: 5px;
+
+                &:before {
+                    display: inline-block;
+                    font-size: 18px;
+                }
+            }
+        }
+
+        .media-management-file-size {
+            width: 120px;
+            min-width: 120px;
+        }
+
+        .media-management-created-at {
+            width: 150px;
+            min-width: 150px;
+        }
+
+        &:nth-child(odd) {
+            background-color: #ecf0f1;
+        }
+
+        &:hover {
+            background-color: darken(#ecf0f1, 10%);
+        }
+    }
+}
+
+/*Grid*/
+.media-management-grid {
+    padding: 10px 10px 0;
+
+    ul {
+        padding: 0;
+        margin: 0 -5px;
+        @include clearfix;
+    }
+
+    li {
+        display: block;
+        width: percentage(math.div(1px, 8px));
+        margin-bottom: 15px;
+        float: left;
+        padding: 0 5px;
+
+        .media-management-item {
+            position: relative;
+            cursor: pointer;
+            @include lib-css(transition, all 0.1s ease-in-out);
+
+            &:after {
+                content: "";
+                display: block;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                position: absolute;
+            }
+
+            .media-item-selected {
+                display: none;
+                position: absolute;
+                top: 3px;
+                right: 3px;
+                border-radius: 50% !important;
+                background: $color-secondary;
+                height: 24px;
+                width: 24px;
+                z-index: 20;
+                text-align: center;
+
+                svg {
+                    fill: white;
+                    width: 18px;
+                    margin-top: 3px;
+                }
+            }
+        }
+
+        .media-management-thumbnail {
+            border-bottom: 0 none;
+
+            img {
+                width: auto;
+                height: 100%;
+                left: 50%;
+                top: 0;
+                @include lib-css(transform, translateX(-50%));
+            }
+        }
+
+        .media-management-description {
+            padding: 8px 10px;
+            @include lib-css(transition, all 0.1s ease-in-out);
+            background-color: #dddddd;
+            text-align: center;
+
+            .title {
+                font-size: 12px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .size {
+                font-size: 12px;
+                margin-top: 10px;
+            }
+        }
+
+        input[type="checkbox"]:checked + .media-management-item {
+            .media-item-selected {
+                display: block;
+            }
+
+            &:after {
+                box-shadow: -2px -2px 0px $color-secondary inset,
+                    2px 2px 0px $color-secondary inset;
+            }
+
+            .media-management-description {
+                background-color: $color-secondary;
+                color: $color-white;
+            }
+        }
+    }
+}
+
+.media-management-grid-small-thumbnail {
+    li {
+        width: percentage(math.div(1px, 3px));
+
+        .media-management-item {
+            display: flex;
+            @include lib-css(flex-direction, row);
+        }
+
+        .media-management-thumbnail {
+            width: 100px;
+            min-width: 100px;
+            border: 0 none;
+            left: 0;
+            top: 0;
+        }
+
+        .media-management-description {
+            @include lib-css(flex-grow, 1);
+        }
+    }
+}
+
+.media-management-grid:not(.media-management-grid-small-thumbnail) {
+    .media-management-thumbnail {
+        i {
+            font-size: 70px;
+        }
+    }
+}
+
+.media-management-items {
+    li.no-items {
+        width: auto;
+        height: auto;
+        border-radius: 0;
+        border: 0 none;
+        position: absolute;
+        @include center-all();
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #94a7b1;
+        font-weight: 400;
+        margin: 0 !important;
+        text-align: center;
+
+        .fa,
+        .fas,
+        .far,
+        .fab {
+            font-size: 150px;
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: 17px;
+        }
+
+        .on-loading & {
+            display: none !important;
+        }
+    }
+
+    &.has-items .no-items {
+        display: none !important;
+    }
+
+    .media-management-container[data-breadcrumb-count="0"] &,
+    .media-management-container[data-breadcrumb-count="1"] & {
+        li.up-one-level {
+            display: none !important;
+        }
+    }
+
+    .media-management-container:not([data-view-in="all_media"]) & li.no-items {
+        @include lib-css(pointer-events, none);
+    }
+
+    .media-management-container[data-view-in="all_media"] & li.no-items {
+        width: 400px;
+        height: 400px;
+        border-radius: 50% !important;
+        border: 1px solid #dce6f1;
+        background-color: #ffffff;
+        cursor: pointer;
+    }
+}
+
+@media (max-width: $screen-md-max) {
+    .media-management-grid li {
+        width: percentage(math.div(1px, 6px));
+    }
+}
+
+@media (max-width: $screen-sm-max) {
+    .media-management-grid li {
+        width: percentage(math.div(1px, 5px));
+    }
+}
+
+.context-menu-list {
+    z-index: 21 !important;
+}

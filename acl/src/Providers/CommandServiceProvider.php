@@ -1,0 +1,16 @@
+<?php
+
+namespace BlackCMS\ACL\Providers;
+
+use BlackCMS\ACL\Commands\UserCreateCommand;
+use Illuminate\Support\ServiceProvider;
+
+class CommandServiceProvider extends ServiceProvider
+{
+    public function boot()
+    {
+        if ($this->app->runningInConsole()) {
+            $this->commands([UserCreateCommand::class]);
+        }
+    }
+}

@@ -1,0 +1,78 @@
+{
+    "name": "blackcms/core",
+    "description": "The BlackCMS Core Composer Package",
+    "version": "1.0.0",
+    "homepage": "https://github.com/blackcms/core",
+    "keywords": [
+        "blackcms",
+        "core"
+    ],
+    "support": {
+        "source": "https://github.com/blackcms/core",
+        "issues": "https://github.com/blackcms/core/issues"
+    },
+    "authors": [
+        {
+            "name": "Pyor Team",
+            "email": "dev@pyor.team"
+        }
+    ],
+    "type": "core",
+    "require": {
+        "barryvdh/laravel-dompdf": "1.0.0",
+        "intervention/image": "^2.6",
+        "kris/laravel-form-builder": "dev-master",
+        "laravelcollective/html": "^6.2",
+        "xantios/mimey": "^2.2",
+        "tightenco/ziggy": "^1.4",
+        "yajra/laravel-datatables-buttons": "^4.13",
+        "yajra/laravel-datatables-oracle": "^9.18",
+        "guzzlehttp/guzzle": "^6.0|^7.0",
+        "mews/purifier": "^3.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "BlackCMS\\Support\\": "support/src",
+            "BlackCMS\\ACL\\": "acl/src",
+            "BlackCMS\\Base\\": "base/src",
+            "BlackCMS\\Dashboard\\": "dashboard/src",
+            "BlackCMS\\Media\\": "media/src",
+            "BlackCMS\\Setting\\": "setting/src",
+            "BlackCMS\\Table\\": "table/src",
+            "BlackCMS\\JsValidation\\": "js-validation/src",
+            "BlackCMS\\Chart\\": "chart/src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "BlackCMS\\Base\\Providers\\BaseServiceProvider",
+                "BlackCMS\\Base\\Providers\\CommandServiceProvider",
+                "BlackCMS\\Base\\Providers\\EventServiceProvider",
+                "BlackCMS\\Base\\Providers\\BreadcrumbsServiceProvider",
+                "BlackCMS\\Base\\Providers\\ComposerServiceProvider",
+                "BlackCMS\\Base\\Providers\\MailConfigServiceProvider",
+                "BlackCMS\\Base\\Providers\\FormServiceProvider",
+                "BlackCMS\\Support\\Providers\\SupportServiceProvider",
+                "BlackCMS\\Table\\Providers\\TableServiceProvider",
+                "BlackCMS\\ACL\\Providers\\AclServiceProvider",
+                "BlackCMS\\Dashboard\\Providers\\DashboardServiceProvider",
+                "BlackCMS\\Media\\Providers\\MediaServiceProvider",
+                "BlackCMS\\JsValidation\\Providers\\JsValidationServiceProvider",
+                "BlackCMS\\Chart\\Providers\\ChartServiceProvider"
+            ],
+            "aliases": {
+                "Assets": "BlackCMS\\Base\\Facades\\AssetsFacade",
+                "BaseHelper": "BlackCMS\\Base\\Facades\\BaseHelperFacade",
+                "MetaBox": "BlackCMS\\Base\\Facades\\MetaBoxFacade",
+                "Action": "BlackCMS\\Base\\Facades\\ActionFacade",
+                "Filter": "BlackCMS\\Base\\Facades\\FilterFacade",
+                "EmailHandler": "BlackCMS\\Base\\Facades\\EmailHandlerFacade",
+                "Breadcrumbs": "BlackCMS\\Base\\Facades\\BreadcrumbsFacade",
+                "JsValidator": "BlackCMS\\JsValidation\\Facades\\JsValidatorFacade"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

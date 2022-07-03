@@ -1,0 +1,25 @@
+.media-management-breadcrumb {
+    @include lib-css(flex-grow, 1);
+
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    .breadcrumb {
+        background-color: transparent;
+        margin-bottom: 0;
+
+        li {
+            a {
+                color: #333333;
+            }
+        }
+    }
+
+    .breadcrumb > li + li:before {
+        padding: 0 5px;
+        color: #ccc;
+        content: "/\00a0";
+    }
+}

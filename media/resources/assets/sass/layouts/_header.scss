@@ -1,0 +1,75 @@
+.media-management-header {
+    .media-management-top-header,
+    .media-management-bottom-header {
+        display: flex;
+        width: 100%;
+        padding: 10px;
+        @include lib-css(flex-direction, row);
+        border-bottom: 1px solid $color-lighter-black;
+    }
+
+    .media-management-top-header {
+        .media-management-actions,
+        .media-management-search {
+            display: flex;
+            @include lib-css(align-items, center);
+        }
+
+        .media-management-actions {
+            @include lib-css(flex-grow, 1);
+
+            .btn {
+                margin-right: 5px;
+            }
+        }
+
+        .media-management-search {
+            .input-search-wrapper {
+                position: relative;
+            }
+
+            input {
+                box-shadow: none !important;
+                border: 1px solid $color-primary;
+                color: $color-primary;
+                @include lib-css(transition, all 0.3s ease-in-out);
+                width: 200px;
+
+                &:focus {
+                    border: 1px solid $color-orange;
+                }
+            }
+
+            .btn {
+                position: absolute;
+                top: 0;
+                right: 0;
+                color: $color-primary;
+
+                &:hover,
+                &:focus,
+                &:active {
+                    color: $color-orange;
+                }
+            }
+        }
+    }
+
+    .media-management-bottom-header {
+        .media-management-breadcrumb,
+        .media-management-tools {
+            display: flex;
+            @include lib-css(align-items, center);
+        }
+
+        .media-management-tools {
+            .dropdown {
+                display: inline-block;
+            }
+
+            .btn-group {
+                margin-left: 5px;
+            }
+        }
+    }
+}
