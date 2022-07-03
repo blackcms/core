@@ -1,6 +1,6 @@
 # BlackCMS/Core
 
-<p align="center">
+<p>
     <a href="https://img.shields.io/github/license/blackcms/core"><img src="https://img.shields.io/github/license/blackcms/core"></a>
     <a href="https://img.shields.io/github/forks/blackcms/core"><img src="https://img.shields.io/github/forks/blackcms/core"></a>
     <a href="https://img.shields.io/github/issues/blackcms/core"><img src="https://img.shields.io/github/issues/blackcms/core"></a>
