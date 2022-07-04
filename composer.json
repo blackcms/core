@@ -1,6 +1,6 @@
 {
     "name": "blackcms/core",
-    "description": "The BlackCMS Core Composer Package",
+    "description": "Core Composer Package",
     "version": "1.0.0",
     "homepage": "https://github.com/blackcms/core",
     "keywords": [
