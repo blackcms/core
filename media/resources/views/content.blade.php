@@ -488,7 +488,6 @@
     <div class="media-management-list">
         <ul>
             <li class="no-items">
-                <i class="fas fa-cloud-upload-alt"></i>
                 <h3>Drop files and folders here</h3>
                 <p>Or use the upload button above.</p>
             </li>
@@ -509,7 +508,6 @@
     <div class="media-management-grid">
         <ul>
             <li class="no-items">
-                <i class="__noItemIcon__"></i>
                 <h3>__noItemTitle__</h3>
                 <p>__noItemMessage__</p>
             </li>

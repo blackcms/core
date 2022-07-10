@@ -5,8 +5,8 @@
             <div class="alert alert-primary">
                 <p>{{ trans('core/base::system.report_description') }}:</p>
                 <button id="btn-report" class="btn btn-primary btn-sm">{{ trans('core/base::system.get_system_report') }}</button>
-                <div id="report-wrapper">
-                    <textarea name="txt-report" id="txt-report" class="col-sm-12" rows="10" spellcheck="false" onfocus="this.select()">
+                <div id="report-wrapper" style="display: none;">
+                    <textarea name="txt-report" id="txt-report" class="mt-3 mb-2 col-sm-12" rows="10" spellcheck="false" onfocus="this.select()">
                         ### {{ trans('core/base::system.system_environment') }}
                         - {{ trans('core/base::system.cms_version') }}: {{ get_cms_version() }}
                         - {{ trans('core/base::system.framework_version') }}: {{ $systemEnv['version'] }}

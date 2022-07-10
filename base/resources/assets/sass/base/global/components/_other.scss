@@ -218,7 +218,7 @@ ul.dropdown-menu.float-end {
     display: block;
     margin-top: 5px;
     margin-bottom: 10px;
-    background-color: $brand-main-color;
+    background-color: lighten($brand-main-color, 25%);
     padding: 5px;
     font-size: 0.9em;
     cursor: help;

@@ -1,1 +1,1 @@
-{{ $item['name'] }} : <span class="label ld-version-tag">{{ $item['version'] }}</span>
+{{ $item['name'] }} : <code>{{ $item['version'] }}</code>

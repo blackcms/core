@@ -273,8 +273,6 @@ input[type="checkbox"]:checked:after {
     .panel {
         margin-bottom: 20px;
         background-color: #ffffff;
-        border: 1px solid transparent;
-        border-radius: 4px !important;
         -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
         box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
     }
@@ -1517,8 +1515,6 @@ svg:not(:root) {
 }
 
 .ui-select-wrapper {
-    border: 1px solid #c4cdd5;
-    border-radius: 3px !important;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     position: relative;
@@ -1533,8 +1529,7 @@ svg:not(:root) {
         to(#f9fafb)
     );
     background: linear-gradient(to bottom, #ffffff, #f9fafb);
-    -webkit-box-shadow: 0 1px 0 0 rgba(22, 29, 37, 0.05);
-    box-shadow: 0 1px 0 0 rgba(22, 29, 37, 0.05);
+    border: 1px solid grey;
 
     .ui-select {
         width: 100%;
@@ -1557,7 +1552,7 @@ svg:not(:root) {
     appearance: none;
     width: 100%;
     font-weight: 400;
-    line-height: 24px;
+    line-height: 30px;
     text-transform: initial;
     letter-spacing: initial;
     background: transparent !important;

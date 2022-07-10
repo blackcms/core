@@ -363,31 +363,18 @@ div.dataTables_info {
     display: block;
     float: left;
     position: absolute;
-    top: -50px;
+    top: -52px;
     left: 10px;
 
     input[type="search"] {
-        margin-top: 3px;
         height: 36px;
         width: 250px;
         padding-right: 30px;
+        border: 0;
+        border-radius: 0px !important;
     }
 
     label {
-        &::after {
-            font: normal normal normal 14px/1 Font Awesome\5 Free;
-            content: "\f002";
-            position: absolute;
-            right: -4px;
-            top: 6px;
-            width: 40px;
-            height: 30px;
-            line-height: 30px;
-            text-align: center;
-            color: #495057;
-            font-weight: 900;
-        }
-
         font-size: 0;
 
         input {

@@ -10,10 +10,10 @@
             {!! Form::text('email', old('email'), ['class' => 'form-control', 'placeholder' => trans('core/acl::auth.login.email')]) !!}
             <label class="form-label">{{ trans('core/acl::auth.login.email') }}</label>
         </div>
-        <button type="submit" class="mb-2 btn btn-primary">
+        <button type="submit" class="mb-2 btn btn-light">
             {{ trans('core/acl::auth.forgot_password.submit') }}
         </button>
         <br>
-        <a class="lost-pass-link" href="{{ route('access.login') }}">{{ trans('core/acl::auth.back_to_login') }}</a>
+        <a class="lost-pass-link text-white" href="{{ route('access.login') }}">{{ trans('core/acl::auth.back_to_login') }}</a>
     {!! Form::close() !!}
 @stop

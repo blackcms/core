@@ -27,7 +27,7 @@
 </div>
 
 @if (!setting('admin_style_sidebar'))
-    <nav class="admin-navbar navbar navbar-expand-lg navbar-dark py-0 px-3" style="border-top: 1px solid white;">
+    <nav class="admin-navbar navbar navbar-expand-lg navbar-dark py-0 px-3">
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 @foreach ($menus = dashboard_menu()->getAll() as $menu)

@@ -8,12 +8,25 @@
 @import "layouts/_variables";
 @import "libraries/libraries";
 
-/* Breadcrumb */
-.page-content .breadcrumb {
-    background: $brand-main-color;
+$border-main-color: #e5e5e5;
+
+/* Page content */
+.page-content {
+    background-color: #f2f2f2;
+
+    /* Breadcrumb */
+    .breadcrumb {
+        background: $brand-main-color;
+    }
 }
 
 /* Btn */
+.btn-set {
+    button {
+        margin-bottom: 10px;
+    }
+}
+
 .btn {
     border-radius: 0px;
 }
@@ -25,7 +38,6 @@
 
 /* Card */
 .card {
-    border-color: $brand-main-color;
     border-radius: 0;
 }
 
@@ -136,12 +148,12 @@ input[type="radio"]:before,
 .portlet.light.bordered,
 .help-block,
 input[type="radio"]:checked:after {
-    border: 1px solid $brand-main-color !important;
+    border: 1px solid $border-main-color !important;
 }
 
 .meta-boxes .widget-title,
 .portlet-title {
-    border-bottom: 1px solid $brand-main-color !important;
+    // border-bottom: 1px solid $border-main-color !important;
 }
 
 /* Theme options */
@@ -158,6 +170,10 @@ input[type="radio"]:checked:after {
 }
 
 /* admin-navbar */
+.admin-navbar {
+    background: lighten($brand-main-color, 10%);
+}
+
 @media (min-width: 992px) {
     .admin-navbar .nav-item span.title {
         display: none;
@@ -722,12 +738,8 @@ Page Footer
 ******/
 
 .page-footer {
-    border-top: 2px solid $footer-default-font-color;
-    background-color: $footer-fixed-bg-color;
-    color: $footer-default-font-color;
-
-    .page-footer-inner {
-    }
+    background-color: #f2f2f2;
+    color: black;
 
     .page-footer-fixed & {
         background-color: $footer-fixed-bg-color;

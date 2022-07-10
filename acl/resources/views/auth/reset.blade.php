@@ -18,9 +18,9 @@
             {!! Form::password('password_confirmation', ['class' => 'form-control', 'placeholder' => trans('core/acl::auth.reset.password_confirmation')]) !!}
         </div>
 
-        <button type="submit" class="btn btn-block btn-primary login-button">
+        <button type="submit" class="btn btn-block btn-light login-button">
             <input type="hidden" name="token" value="{{ $token }}"/>
-            <span class="signin">{{ trans('core/acl::auth.reset.update') }}</span>
+            <span class="signin text-white">{{ trans('core/acl::auth.reset.update') }}</span>
         </button>
     {!! Form::close() !!}
 @stop

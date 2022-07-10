@@ -19,7 +19,7 @@
     </div>
 </div>
 <div id="waypoint"></div>
-<div class="form-actions form-actions-fixed-top hidden">
+<div class="form-actions form-actions-fixed-top @if (setting('admin_style_sidebar')) sidebar @endif hidden">
     {!! Breadcrumbs::render('main', page_title()->getTitle(false)) !!}
     <div class="btn-set">
         @if ($role && $role->id)
