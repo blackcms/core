@@ -11,8 +11,11 @@
                                     <i class="{{ $menu['icon'] }}"></i>
                                     <span class="title">
                                         {{ !is_array(trans($menu['name'])) ? trans($menu['name']) : null }}
-                                        {!! apply_filters(BASE_FILTER_APPEND_MENU_NAME, null, $menu['id']) !!}</span>
-                                    @if (isset($menu['children']) && count($menu['children'])) <span class="arrow @if ($menu['active']) open @endif"></span> @endif
+                                        {!! apply_filters(BASE_FILTER_APPEND_MENU_NAME, null, $menu['id']) !!}
+                                    </span>
+                                    @if (isset($menu['children']) && count($menu['children']))
+                                        <i class="las la-ellipsis-h" style="float: right;"></i>
+                                    @endif
                                 </a>
                                 @if (isset($menu['children']) && count($menu['children']))
                                     <ul class="sub-menu @if (!$menu['active']) hidden-ul @endif">

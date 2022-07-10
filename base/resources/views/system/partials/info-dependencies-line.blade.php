@@ -1,9 +1,9 @@
 <ul>
     @if(is_array($item['dependencies']))
         @foreach($item['dependencies'] as $dependencyName => $dependencyVersion)
-            <li>{{ $dependencyName }} : <span class="label ld-version-tag">{{ $dependencyVersion }}</span></li>
+            <li>{{ $dependencyName }} : <code>{{ $dependencyVersion }}</code></li>
         @endforeach
     @else
-        <li><span class="label label-primary">{{ $item['dependencies'] }}</span></li>
+        <li><code>{{ $item['dependencies'] }}</code></li>
     @endif
 </ul>

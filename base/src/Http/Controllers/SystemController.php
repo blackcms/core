@@ -41,7 +41,7 @@ class SystemController extends Controller
 
         Assets::addScriptsDirectly(
             "vendor/core/core/base/js/system-info.js"
-        )->addStylesDirectly(["vendor/core/core/base/css/system-info.css"]);
+        );
 
         $composerArray = SystemManagement::getComposerArray();
         $packages = SystemManagement::getPackagesAndDependencies(
